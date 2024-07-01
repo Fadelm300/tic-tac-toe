@@ -1,5 +1,7 @@
+html{
+  background-image: linear-gradient(to right top, #9331e0, #793fd9, #6147d1, #4a4cc6, #354eb9, #1f5fc2, #056ec8, #007dcc, #009ee1, #00bfed, #00def1, #5ffbf1);
+}
 body {
-    background-color: gainsboro;
     /* Use a system font, if none are available use an available sans-sarif */
     font-family: system-ui, sans-serif;
     margin: 0;
