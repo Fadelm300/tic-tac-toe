@@ -20,14 +20,18 @@ body {
     font-size: 64px;
     text-align: center;
   }
-  .Reset{
-    color: aqua;
-    display: contents;
-    
-  }
-  .reset_div{
-    text-align: center;
-    background-color: red;
-  }
+
+.Reset-btn {
+  display: none;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.Reset-btn.show {
+  display: block;
+}
 
   

@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 const squares =document.querySelectorAll('.sqr');
 const Msg = document.querySelector('#message')  ;
+const Reset = document.querySelector('#Reset');
 
 /*---------------------------- Variables (state) ----------------------------*/
 let board = Array(9).fill(null);  // Represent the state of the squares on the board
@@ -43,7 +44,7 @@ function checkwin(Event){
     count ++;
     if(count==9){
         Msg.innerText = " tie تعادل "
-        Reset.style.display="flex";
+        Reset.classList.add('show');
         
 
     }
@@ -101,7 +102,7 @@ function checkwin(Event){
         squares.forEach(square => {
             square.removeEventListener('click' , Play ) ;
         });
-        Reset.style.display="flex";
+  Reset.classList.add('show');
     }
 }
 
@@ -113,8 +114,8 @@ function stop(){
      squares.forEach((square) => {
          square.addEventListener('click' , Play ) ;
         });
-    Reset.style.display="none";
-    Msg.innerText="Message"
+        Reset.classList.remove('show');
+        Msg.innerText="Message"
     winner = false;
     tie = false ;
 
