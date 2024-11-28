@@ -1,0 +1,86 @@
+Here’s a detailed breakdown of how the **TicTacToe** class works, step by step:
+
+ ==> 1. **Class Initialization (`constructor`)**:
+   - **`this.board`**: Initializes a 3x3 board with empty spaces (`' '`), which will hold the game pieces ('X' for the player and 'O' for the computer).
+   - **`this.playerPieces` & `this.computerPieces`**: Arrays to track the positions of the player's and computer's pieces on the board.
+   - **`this.boardElement` & `this.messageElement`**: DOM elements used to display the board and show messages like "Your turn!" or "Computer wins!".
+   - **`this.resetButton`**: Button that resets the game when clicked.
+   - **`this.gameOver`**: Flag to track whether the game is over or not.
+   - **`this.turn`**: Tracks whose turn it is (either 'player' or 'computer').
+   - **`this.pieceMoveInProgress`**: Flag used for managing piece movement during the game.
+
+   - **`resetButton.addEventListener('click', () => this.resetGame())`**: Listens for clicks on the reset button and resets the game when clicked.
+
+ ==> 2. **Displaying the Board (`displayBoard`)**:
+   - **`this.boardElement.innerHTML = ''`**: Clears the board in the DOM.
+   - Loops through the `this.board` (3x3 grid) to create individual cells.
+     - If a cell has a symbol ('X' or 'O'), it displays that symbol and adds a `taken` class.
+     - If the game is in the "piece move in progress" phase (i.e., after the initial move), it allows the player to move their pieces. This is handled by the `movePiece` method.
+     - If the game is in the regular turn phase, it allows the player to make a move by clicking a cell, which calls the `playerMove` method.
+
+ ==> 3. **Checking for a Winner (`isWinner`)**:
+   - This method takes a list of `pieces` (player or computer positions) and checks if any of the winning conditions are met (3 consecutive positions in a row, column, or diagonal).
+   - It checks each of the predefined win conditions (rows, columns, diagonals) to see if all positions in that condition are occupied by pieces from the player or computer.
+   - **Returns** `true` if there's a winner, otherwise `false`.
+
+ ==> 4. **Getting Empty Positions (`getEmptyPositions`)**:
+   - This method loops through the board and finds all the empty cells (cells with `' '`).
+   - **Returns** a list of empty positions as `[row, col]` coordinates.
+
+ ==> 5. **Making a Move (`makeMove`)**:
+   - This method places a piece on the board.
+   - It takes the `player` (either 'player' or 'computer') and `position` (array with `[row, col]`) as arguments.
+   - Updates the board by setting the cell at the given position to either 'X' or 'O', depending on the player.
+   - Adds the position to the respective player’s list (`playerPieces` or `computerPieces`).
+
+ ==> 6. **Removing the Oldest Piece (`removeOldestPiece`)**:
+   - This method is used when either the player or computer has placed more than 3 pieces on the board.
+   - It removes the first piece from the respective player’s list and clears the corresponding cell on the board.
+   - This helps in simulating the idea of pieces "moving" on the board after the player or computer has placed their first 3 pieces.
+
+ ==> 7. **Player's Move (`playerMove`)**:
+   - This method is called when the player clicks on a cell during their turn.
+   - It checks whether the cell is empty and whether the game is not over.
+   - If valid, it places the player's piece ('X') in that cell using the `makeMove` method.
+   - After each move, the method checks if the player has won by calling `isWinner`.
+   - If the player wins, a message is displayed and the game is marked as over (`gameOver = true`).
+   - If the player has placed more than 3 pieces, the oldest piece is removed using `removeOldestPiece`.
+   - The turn is switched to the computer after the player's move, and the message is updated to "Computer's turn".
+   - Calls `computerTurn` to trigger the computer's move.
+
+ ==> 8. **Computer's Move (`computerMove`)**:
+   - This method is called during the computer's turn. It decides where the computer should place its piece.
+   - The computer first checks if it can win by simulating each empty position and seeing if placing an 'O' results in a win (using the `isWinner` method).
+   - If the computer can win, it places the piece in the winning position.
+   - If the computer can't win, it checks if the player is about to win and blocks that move by placing its piece in the blocking position.
+   - If neither winning nor blocking moves are found, the computer randomly selects an empty position using the `getEmptyPositions` method.
+   - The selected position is returned to the `computerTurn` method, where the move is made and the board is updated.
+
+ ==> 9. **Computer's Turn (`computerTurn`)**:
+   - This method is called when it's the computer's turn to play.
+   - The move is made after a short delay (simulated by `setTimeout`) to make the computer’s move feel more natural.
+   - After the computer places its piece, the board is updated and checked for a winner (using `isWinner`).
+   - If the computer wins, a message is displayed and the game is marked as over.
+   - If the computer has placed more than 3 pieces, its oldest piece is removed using `removeOldestPiece`.
+   - The turn is switched back to the player after the computer's move, and the message is updated to "Your turn!".
+
+ ==> 10. **Resetting the Game (`resetGame`)**:
+   - This method resets the board to its initial empty state.
+   - Clears the lists of player and computer pieces.
+   - Resets the game state variables (`gameOver`, `turn`, and `pieceMoveInProgress`).
+   - Displays the updated empty board and sets the message to "Your turn!".
+
+ ==> 11. **Starting the Game (`play`)**:
+   - This method is called when the game starts.
+   - It displays the empty board and sets the initial message to "Your turn!".
+   - This is where the game begins, and the player starts with the first move.
+
+ ==> 12. **Game Flow**:
+   - Initially, the game starts with the player’s turn.
+   - The player places their piece, and the computer checks if it can win or block the player, or otherwise selects a random move.
+   - The game alternates between the player’s and computer’s turns, checking for a winner after each move.
+   - The game ends when either the player or the computer wins, or if there are no more valid moves to make.
+   - The player can reset the game at any time by clicking the reset button.
+
+ ==> Summary:
+The code implements a basic interactive **Tic-Tac-Toe game** between a human player and a computer. The game alternates turns between the player and computer. The computer uses basic AI strategies: it tries to win if it can, blocks the player's winning move, and randomly selects a move when neither is possible. The game can be reset, and the state is updated after every move.
