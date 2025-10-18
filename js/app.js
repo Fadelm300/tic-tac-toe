@@ -40,7 +40,8 @@ class TicTacToe {
         }
       }
     }
-  
+    // Developed by **Fadel Mohammad**  
+
     // Check if there is a winner
     isWinner(pieces) {
       const winConditions = [
@@ -194,4 +195,6 @@ class TicTacToe {
   // Start the game
   const game = new TicTacToe();
   game.play();
+  // Developed by **Fadel Mohammad**  
+
   
