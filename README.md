@@ -1,13 +1,13 @@
-# 🎮 Tic Tac Toe — Advanced Continuous Mode
+# 🎮 Tic Tac Toe   Advanced Continuous Mode
 
 A modern and **unique version** of the classic Tic-Tac-Toe game, built using **HTML, CSS, and JavaScript**.  
-Unlike traditional Tic-Tac-Toe games that end after 9 moves or a draw, this version continues **indefinitely** until one player wins — giving it a fresh, strategic twist.
+Unlike traditional Tic-Tac-Toe games that end after 9 moves or a draw, this version continues **indefinitely** until one player wins, giving it a fresh, strategic twist.
 
 ---
 ## 🚀 Live Demo
 
 Play it online now on **Vercel**:  
-👉 [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app)
+👉 [https://your-vercel-link.vercel.app](https://tic-tac-toe-self-six.vercel.app/)
 
 ---
 
@@ -16,14 +16,14 @@ Play it online now on **Vercel**:
 This isn’t your ordinary Tic-Tac-Toe.
 
 ✨ **Continuous Play Mode**  
-The game keeps going even after all 9 cells are filled — no draws here. The game continues until one player (human or AI) finally wins.
+The game keeps going even after all 9 cells are filled, no draws here. The game continues until one player (human or AI) finally wins.
 
 🌀 **Piece Rotation System**  
 Each player (you and the AI) can only have **3 active pieces** on the board at any time.  
 After you place your 4th piece, your **oldest piece disappears**, forcing you to think strategically.
 
 ⚔️ **Dynamic Challenge**  
-Because pieces keep disappearing and reappearing, you can never relax — one mistake could instantly give your opponent the win.
+Because pieces keep disappearing and reappearing, you can never relax one mistake could instantly give your opponent the win.
 
 🤖 **Smart AI**  
 The AI analyzes the board each turn:
@@ -52,7 +52,7 @@ The AI analyzes the board each turn:
 |----------|-------------|
 | **Smart AI** | Uses simple logic to win or block the player. |
 | **Piece Limit (3 Max)** | Keeps only 3 of your latest moves on the board. |
-| **Continuous Gameplay** | Never ends in a tie — play continues until a winner emerges. |
+| **Continuous Gameplay** | Never ends in a tie; play continues until a winner emerges. |
 | **Reset Button** | Instantly restart the game anytime. |
 | **Clean UI** | Simple and responsive layout. |
 
@@ -73,7 +73,7 @@ The AI analyzes the board each turn:
 
 ## 💡 Behind the Scenes
 
-This version introduces a **rotational gameplay mechanic** — every time a player places a fourth piece, their **first piece disappears**, similar to "moving pieces" in strategy games like checkers.
+This version introduces a **rotational gameplay mechanic**   every time a player places a fourth piece, their **first piece disappears**, similar to "moving pieces" in strategy games like checkers.
 
 That means:
 - The board is always in motion.
@@ -84,8 +84,8 @@ That means:
 
 ## 🧑‍💻 Technical Summary
 
-- Built entirely with **Vanilla JavaScript** — no libraries or frameworks.
-- Game logic organized inside the `TicTacToe` class.
+- Built entirely with **Vanilla JavaScript**   no libraries or frameworks.
+- Game logic organised inside the `TicTacToe` class.
 - DOM-based rendering with dynamic updates after every move.
 - Real-time turn tracking and winner detection.
 
@@ -110,7 +110,7 @@ http://localhost:5500
 ## 🧑‍💻 Developer
 
 Developed by **Fadel Mohammad**  
-A modern reinterpretation of Tic Tac Toe — combining strategy, persistence, and creativity.
+A modern reinterpretation of Tic Tac Toe  combining strategy, persistence, and creativity.
 
 ---
 
@@ -118,6 +118,6 @@ A modern reinterpretation of Tic Tac Toe — combining strategy, persistence, an
 ## 🏁 Summary
 
 This project redefines the classic Tic Tac Toe experience with **continuous gameplay** and a **smart AI opponent**.  
-It's simple, fast, and addictive — a battle of logic that never ends until someone truly loses.
+It's simple, fast, and addictive, a battle of logic that never ends until someone truly loses.
 
 ---
