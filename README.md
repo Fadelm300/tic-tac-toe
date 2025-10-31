@@ -6,8 +6,8 @@ Unlike traditional Tic-Tac-Toe games that end after 9 moves or a draw, this vers
 ---
 ## 🚀 Live Demo
 
-Play it online now on **Vercel**:  
-👉 [https://your-vercel-link.vercel.app](https://tic-tac-toe-self-six.vercel.app/)
+Play it online now on :  
+👉 [🎮 Game Link](https://tic-tac-toe-self-six.vercel.app/)
 
 ---
 
